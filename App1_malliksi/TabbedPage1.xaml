@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1_malliksi.TabbedPage1">
+  <!--Pages can be added as references or inline-->
+    <TabbedPage.Title>Online Trackers</TabbedPage.Title>
+    <ContentPage>
+        <StackLayout Padding="0">
+            <Label Text="- Active  Trackers -" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            <Button Text="Load Trackers" Clicked="LoadTrackers"></Button>
+            <ListView Margin="30" x:Name="trackerList">
+
+            </ListView>
+            <Button Text="List Work Assignments" Clicked="ListWorkAssignments"></Button>
+            
+        </StackLayout>
+
+    </ContentPage>
+</TabbedPage>

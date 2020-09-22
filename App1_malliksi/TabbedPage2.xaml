@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:gmaps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+            xmlns:local="clr-namespace:App1_malliksi"
+            x:Class="App1_malliksi.TabbedPage2">
+
+    <!--Pages can be added as references or inline-->
+    <ContentPage Title="Trakers" >
+        
+        <StackLayout Padding="0">
+            <Label Text="- Select Tracker -" HorizontalTextAlignment="Center" TextColor="Black" FontSize="30"/>
+            <Button Text="Load Trackers" Clicked="LoadTrackers"></Button>
+            <ListView Margin="30" x:Name="trackerList">
+
+            </ListView>
+        </StackLayout>
+    </ContentPage>
+   
+    <ContentPage Title="Info" Padding="40" >
+        <StackLayout>
+
+            <StackLayout Orientation="Horizontal"  >
+                <Label Text="Tracker: " FontSize="30" ></Label>
+                <Label x:Name="trackerIdLabel" Text="0" FontSize="30"></Label>
+                <Label Text=": "></Label>
+                <Label x:Name="trackerNameLabel" Text="Name" FontSize="30"></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Latide: "></Label>
+                <Label x:Name="latitudeLabel" Text="0.00"></Label>
+            </StackLayout>
+             <StackLayout Orientation="Horizontal">
+                    <Label Text="Longitude: "></Label>
+                <Label x:Name="longitudeLabel" Text="0.00"></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Speed: "></Label>
+                <Label x:Name="speedLabel" Text="0.00"></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Temp: "></Label>
+                <Label x:Name="tempLabel" Text="0.00"></Label>
+            </StackLayout>
+            <StackLayout  Orientation="Horizontal">
+                <Button x:Name="activeON" Text="Tracking ON" Clicked="ClickActiveON"></Button>
+                <Button x:Name="activeOFF" Text="Tracking OFF" Clicked="ClickActiveOFF" ></Button>
+            </StackLayout>   
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout VerticalOptions="Center">
+                        <Label Text="Tracking Info: " ></Label>
+                    </StackLayout>
+                    <StackLayout VerticalOptions="Center">
+                        <Label x:Name="activeLabel" Text="OFF" FontSize="30" TextColor="Red" ></Label>
+                    </StackLayout>
+                </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="relayON" Text="Relay ON" Clicked="ClickRelayON"></Button>
+                <Button x:Name="relayOFF" Text="Relay OFF" Clicked="ClickRelayOFF" ></Button>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout VerticalOptions="Center">
+                    <Label Text="Relay Info: " FontSize="20" ></Label>
+                </StackLayout>
+                <StackLayout VerticalOptions="Center">
+                    <Label x:Name="relayLabel" Text="OFF" FontSize="30" TextColor="Red" HorizontalOptions="Center"></Label>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Map" >
+        <AbsoluteLayout VerticalOptions="FillAndExpand">
+            <gmaps:Map
+            x:Name="mapView"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        </AbsoluteLayout>
+    </ContentPage>
+</TabbedPage>
